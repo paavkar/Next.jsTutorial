@@ -143,13 +143,11 @@ export default function EditInvoiceForm({
           </div>
 
           <div id="form-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.customerId &&
-              state.errors?.amount &&
-              state.errors?.status && (
-                <p className="mt-2 text-sm text-red-500" key={state.message}>
-                  {state.message}
-                </p>
-              )}
+            {state.errors ? (
+              <p className="mt-2 text-sm text-red-500" key={state.message}>
+                {state.message}
+              </p>
+            ) : null }
           </div>
         </fieldset>
       </div>
